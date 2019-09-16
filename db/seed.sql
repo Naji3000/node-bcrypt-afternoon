@@ -18,6 +18,7 @@ VALUES
 
 
 DROP TABLE IF EXISTS treasures;
+
 CREATE TABLE treasures
 (
   id SERIAL PRIMARY KEY,
