@@ -38,15 +38,15 @@ module.exports = {
             } 
             req.session.user = {
                     isAdmin: user.is_admin, 
+                    id: user.id,
                     username: user.username,
-                    id: user.id
                 }
-                return res.status(200).json(req.session.user)
+                return res.json(req.session.user)
     },
 
     logout: (req, res) => {
         req.session.destroy()
-        res.status(200).json(req.session)
+        return res.sendStatus(200)
         
     }
 }

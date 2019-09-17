@@ -32,6 +32,6 @@ app.get('/auth/logout', authController.logout)
 app.get('/api/treasure/dragon', treasureController.dragonTreasure)
 app.get('/api/treasure/user', auth.usersOnly, treasureController.getUserTreasure)
 app.post('/api/treasure/user', auth.usersOnly, treasureController.addUserTreasure)
-app.get('/api/treasure/all', auth.usersOnly, treasureController.getAllTreasures)
+app.get('/api/treasure/all', auth.usersOnly, auth.adminsOnly, treasureController.getAllTreasure)
 
 app.listen(4000, () => console.log('Listening on Port 4000'))
